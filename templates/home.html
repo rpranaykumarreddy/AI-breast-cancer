@@ -93,8 +93,9 @@
                 <p class="h6 white1">Our Notion</p>
             </div>
             <div class="paddiv2vw" style="padding-top: 0px; font-size: 15px; font-weight: bold;">
-                <p>The project is all about the predicting if a one is diagnosed with breast cancer by taking up some of the measuring values that predict the cancer variety. This can be used by a doctor or women who want to know that if one is affected
-                    with cancer or not.</p> <br>
+                <p>The cancer is basically determined by two values Malignant and Benign.
+                    Malignant is the variant where cancer spreads throughout whereas Benign is the one which doesn't spread. 
+                    Actually they doesn't have any intermediate values so we used classification to get the end product. </p> <br>
                     <div style="padding-left: 25px;">
                         <h3>
                             <span class="tebold cblue">User :</span> Cancer Patients & Doctors
@@ -110,8 +111,8 @@
                 <p class="h6 white1">Our Execution</p>
             </div>
             <div class="paddiv2vw" style="padding-top: 0px; font-size: 15px; font-weight: bold;">
-                <p>We have integrated the prediction stuff by using machine learning through classification by some models. We are tried to predict the cancer by taking up measuring input values and all those values go through every model and finally the
-                    output will be of the most accurate model which predict the cancer.</p>
+                <p>We have taken up the dataset from UCI which  contains the data of the 10 categories and upto 30 inputs which are used to predict the type of cancer. 
+                    We have gone to talk with Medical graduate about the efficient way of taking up the 30 inputs which might be little heavy of the user so finally we got suggestion of just by taking some efficient values and giving the most accurate prediction.</p>
 
             </div>
         </div>
@@ -132,17 +133,16 @@
         data.addColumn('boolean', 'Worst');
 
         data.addRows([
-            ['Radius', true, true, true],
-            ['Texture', true, true, true],
-            ['Perimeter', false, false, false],
-            ['Area', false, false, false],
-            ['Smoothness', true, true, true],
-            ['Compactness', true, false, true],
-            ['concavity', false, false, false],
-            ['concave Points', false, false, false],
-            ['Symmetry', false, false, false],
-            ['Fractal Dimension', false, false, false],
-
+        ['Radius', true, true, true, {style: 'font-style:bold; font-size:1em;'}],
+        ['Texture', true, true, true, {style: 'font-style:bold; font-size:1em;'}],
+        ['Perimeter', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
+        ['Area', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
+        ['Smoothness', true, true, true, {style: 'font-style:bold; font-size:1em;'}],
+        ['Compactness', true, false, true, {style: 'font-style:bold; font-size:1em;'}],
+        ['concavity', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
+        ['concave Points', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
+        ['Symmetry', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
+        ['Fractal Dimension', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
         ]);
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
@@ -161,6 +161,9 @@
                 <h1 class="tecenter cwhite1">TECHNOLOGIES</h1>
                 <div class="h-lin"></div>
             </div>
+            <br>
+            <h4 class="undli cwhite1 curpoi tecenter" style="margin-top:10px;" onclick="showFunction()">look into details</h4>
+        
             <div id="table_div"></div>
         </div>
         <br><br>
@@ -226,8 +229,7 @@
                     </div>
                 </div>
             </div>
-            <h4 class="undli cwhite1 curpoi tecenter" style="margin-top:10px;" onclick="showFunction()">look into details</h4>
-        </div>
+            </div>
 
     </div>
 
