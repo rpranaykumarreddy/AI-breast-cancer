@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} | Breast Cancer Prediction</title>
+    <script defer src="https://kit.fontawesome.com/b8be333c62.js" crossorigin="anonymous"></script>
+    <meta name="author" content="Ravula Pranay Kumar Reddy">
+    <meta name="author" content="Bokka Nirvan Reddy">
+    <link rel="icon" href="{% static "logo-min.PNG" %}">
+    <link rel="stylesheet" href="{% static "common.css" %}">
+    <link rel="stylesheet" href="{% static "main.css" %}">
+</head>
+
+
+<body>
+    <div id="pop-but-opn">
+    
+        <div class="pop-main">
+            <div class="pop-content">
+                Technologies
+            </div>
+    
+            <div class="content-det">
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+                <h3 class="pop-padding">varun reddy </h3>
+    
+    
+            </div>
+        </div>
+    
+        <div class="pop-btn-close">
+            <button onclick="noneFunction()" class="pop-close">
+            Close
+            </button>
+    
+        </div>
+    
+    </div>
+  <script>
+  </script>
+  <div id="navbar">
+      <div class="flex-row nav-bar">
+          <div class="right">
+              <div class="img curpoi" onclick="window.location.assign('{% url 'home' %}')"><img class="curpoi" src="{% static "logo.png" %}" alt=""></div>
+          </div>
+          <div class="left">
+              <div class="disp-lap-nav">
+                  <div class="flex-row width-fit">
+                      <div onmouseover="noneall_nav()" onclick="window.location.assign('{% url 'home' %}')" class="nav-item {% if request.get_full_path == "/" %} {{acti}} {% endif %}  curpoi">
+                          <div class="flex-row">
+                              <p class="">Home</p>
+                          </div>
+                      </div>
+                      <div onmouseover="noneall_nav()" onclick="window.location.assign('{% url 'predict' %}')" class="nav-item {% if request.get_full_path == "/predict" %} {{acti}} {% endif %} curpoi">
+                          <div class="flex-row">
+                              <p class="">Try to Predict</p>
+                          </div>
+                      </div>
+                      <div onmouseover="noneall_nav()" onclick="window.location.assign('{% url 'stats' %}')" class="nav-item {% if request.get_full_path == "/stats" %} {{acti}} {% endif %} curpoi">
+                          <div class="flex-row">
+                              <p class="">Model Evaluation</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="mega-menu disp-lap-nav">
+
+          <div class=" nav-drop-down">
+              <div id="drpdw" class="disnon">
+                  <div class="sam-nav">
+                      <div class="details comp">
+                          <div>
+                              <p id="varFN" class="varF"></p>
+                          </div>
+                          <div>
+                              <p id="varEM" class="varE"></p>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="body-div" onmouseover="noneall_nav()">
+
+
+  {% block content %} {% endblock %}
+
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-circle-up"></i></button>
+  <script>
+              var prevScrollpos = window.pageYOffset;
+              window.onscroll = function() {
+                  scrollFunction();
+              }
+      var mybutton = document.getElementById("myBtn");
+
+
+      function scrollFunction() {
+          if (document.body.scrollTop > 65 || document.documentElement.scrollTop > 65) {
+              mybutton.style.display = "block";
+          } else {
+              mybutton.style.display = "none";
+          }
+      }
+
+      function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+      }
+
+  </script>
+</body>
+
+
+</html>
