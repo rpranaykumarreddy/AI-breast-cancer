@@ -852,7 +852,7 @@ select {
     font-size: 16px;
 }
 
-.table_div {
+#table_div {
     border-radius: 10px;
     background-color: #444;
     display: block;
@@ -1280,15 +1280,6 @@ select {
 }
 
 
-/*
-.text1,
-.text2,
-.text3,
-.logo {
-    display: none;
-}*/
-
-
 /*Division of slideshow-1*/
 
 .var {
@@ -1372,7 +1363,7 @@ select {
 
 .man-slid .text1 {
     z-index: 500;
-    font-size: 35px;
+    font-size: 4.3vmin;
     position: absolute;
     width: 65vw;
     bottom: 22%;
@@ -1386,7 +1377,7 @@ select {
 
 .man-slid .text2 {
     z-index: 500;
-    font-size: 28px;
+    font-size: 3.4vmin;
     position: absolute;
     width: 65vw;
     top: 22%;
@@ -1400,7 +1391,7 @@ select {
 
 .man-slid .text3 {
     z-index: 500;
-    font-size: 14px;
+    font-size: 1.8vmin;
     position: absolute;
     width: 50vw;
     bottom: 15%;
@@ -2540,6 +2531,15 @@ select {
         width: 85vw;
         bottom: 25%;
         left: 50%;
+    }
+    #home-na-dis {
+        display: none;
+    }
+}
+
+@media screen and (max-width:540px) {
+    #home-na-dis {
+        display: none;
     }
 }
 
