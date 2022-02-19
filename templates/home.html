@@ -117,7 +117,56 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['table']
+    });
+    google.charts.setOnLoadCallback(drawTable);
 
+    function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', '');
+        data.addColumn('boolean', 'Mean');
+        data.addColumn('boolean', 'Standard Error');
+        data.addColumn('boolean', 'Worst');
+
+        data.addRows([
+            ['Radius', true, true, true],
+            ['Texture', true, true, true],
+            ['Perimeter', false, false, false],
+            ['Area', false, false, false],
+            ['Smoothness', true, true, true],
+            ['Compactness', true, false, true],
+            ['concavity', false, false, false],
+            ['concave Points', false, false, false],
+            ['Symmetry', false, false, false],
+            ['Fractal Dimension', false, false, false],
+
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {
+            showRowNumber: false,
+            width: '100%',
+            height: '100%'
+        });
+    }
+</script>
+<div class="tech grsl">
+    <div>
+        <div class="flex-col">
+            <div class="inline">
+                <h1 class="tecenter cwhite1">TECHNOLOGIES</h1>
+                <div class="h-lin"></div>
+            </div>
+            <div id="table_div"></div>
+        </div>
+        <br><br>
+
+    </div>
+</div>
 <section class="team-div ">
     <div class="team-div-title">
         <div>
