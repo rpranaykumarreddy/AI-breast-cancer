@@ -9,33 +9,34 @@
     <script defer src="https://kit.fontawesome.com/b8be333c62.js" crossorigin="anonymous"></script>
     <meta name="author" content="Ravula Pranay Kumar Reddy">
     <meta name="author" content="Bokka Nirvan Reddy">
-    <link rel="icon" href="{% static "logo-min.PNG" %}">
+    <link rel="icon" href="{% static "logo-min.png" %}">
     <link rel="stylesheet" href="{% static "common.css" %}">
 </head>
 
 
 <body>
     <div id="pop-but-opn">
-    
                 <div class="pop-main">
                     <div class="pop-content">
                         <div class="flex-row">
                             <div class="inline">
-                                <h1 class="tecenter cblue tebold">TEAM</h1>
+                                <h1 class="tecenter cwhite1">Links</h1>
                                 <div class="h-lin"></div>
                             </div>
                         </div>
                     </div>
         
                     <div class="content-det">
-                        <a class="undil pop-padding" href="https://www.kaggle.com/">Koggle</a>
+                        <br>
+                        <a class="undil cblue pop-padding" target="_blank" href="https://www.kaggle.com/uciml/breast-cancer-wisconsin-data">Kaggle</a>
                         <br>
                         <br>
-                        <a class="undil pop-padding" href="https://archive.ics.uci.edu/ml/index.php">UCI Repository</a>
+                        <a class="undil cblue pop-padding" target="_blank" href="https://archive.ics.uci.edu/ml/index.php">UCI Repository</a>
                         <br>
                     </div>
                 </div>
-        
+                <br>
+                <br>
                 <div class="pop-btn-close">
                     <button onclick="noneFunction()" class="pop-close">
                     Close
@@ -101,9 +102,6 @@
           </div>
       </div>
   </div>
-
-
-  <div class="body-div">
 
 
   {% block content %} {% endblock %}
