@@ -37,31 +37,7 @@
     }
 
 
-    var mybutton = document.getElementById("myBtn");
 
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 65 || document.documentElement.scrollTop > 65) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-
-    var pop = document.getElementById("pop-but-opn");
-
-    function showFunction() {
-        pop.style.display = "block";
-    }
-
-    function noneFunction() {
-        pop.style.display = "none";
-    }
 </script>
 
 <div class="man-slid grsl">
@@ -118,53 +94,85 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-    google.charts.load('current', {
-        'packages': ['table']
-    });
-    google.charts.setOnLoadCallback(drawTable);
-
-    function drawTable() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', '');
-        data.addColumn('boolean', 'Mean');
-        data.addColumn('boolean', 'Standard Error');
-        data.addColumn('boolean', 'Worst');
-
-        data.addRows([
-        ['Radius', true, true, true],
-        ['Texture', true, true, true],
-        ['Perimeter', false, false, false],
-        ['Area', false, false, false],
-        ['Smoothness', true, true, true],
-        ['Compactness', true, false, true],
-        ['concavity', false, false, false],
-        ['concave Points', false, false, false],
-        ['Symmetry', false, false, false],
-        ['Fractal Dimension', false, false, false],
-    ]);
-
-        var table = new google.visualization.Table(document.getElementById('table_div'));
-
-        table.draw(data, {
-            showRowNumber: false,
-            width: '100%',
-            height: '100%'
-        });
-    }
-</script>
 <div class="tech grsl">
     <div>
         <div class="flex-col">
             <div class="inline">
-                <h1 class="tecenter cwhite1">TECHNOLOGIES</h1>
+                <h1 class="tecenter cwhite1">DATASET</h1>
                 <div class="h-lin"></div>
             </div>
             <br>
-            <h4 class="undli cwhite1 curpoi tecenter" style="margin-top:10px;" onclick="showFunction()">look into details</h4>
-        
-            <div id="table_div"></div>
+            <div class="team-social">
+                <div class="flex-row ">
+                    <a href="https://www.kaggle.com/uciml/breast-cancer-wisconsin-data" target="_blank" title="UCI dataset:Kaggle"><span class="social-sym hwhite "><i class="fa-brands fa-kaggle"></i></i></span></a>
+                    <a href="https://github.com/rpranaykumarreddy/bc" target="_blank" title="Project code:Github"><span class="social-sym hwhite"><i class="fa-brands fa-github"></i></i></span></a>
+                </div>
+            </div>
+            
+<div>
+    <table class="table-main">
+        <tr>
+            <th class="head-main"></th>
+            <th class="head-main">Mean</th>
+            <th class="head-main">Standard Deviation</th>
+            <th class="head-main">Worst</th>
+        </tr>
+        <tr>
+            <th class="head-main">Radius</th>
+            <td class="head-main">&#9989;</td>
+            <td class="head-main">&#9989;</td>
+            <td class="head-main">&#9989;</td>
+        </tr>
+        <tr>
+            <th class="head-main">Texture</th>
+            <td class="head-main">&#9989;</td>
+            <td class="head-main">&#9989;</td>
+            <td class="head-main">&#9989;</td>
+        </tr>
+        <tr>
+            <th class="head-main">Perimeter</th>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+        </tr>
+        <tr>
+            <th class="head-main">Area</th>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+        </tr>
+        <tr>
+            <th class="head-main">Smoothness</th>
+            <td class="head-main">&#9989;</td>
+            <td class="head-main">&#9989;</td>
+            <td class="head-main">&#9989;</td>
+        </tr>
+        <tr>
+            <th class="head-main">Compactness</th>
+            <td class="head-main">&#9989;</td>
+            <td class="head-main">&#9989;</td>
+            <td class="head-main">&#9989;</td>
+        </tr>
+        <tr>
+            <th class="head-main">Concave Points</th>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+        </tr>
+        <tr>
+            <th class="head-main">Symmetry</th>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+        </tr>
+        <tr>
+            <th class="head-main">Fractal Dimension</th>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+            <td class="head-main">&#10060;</td>
+        </tr>
+    </table>
+</div>
         </div>
         <br><br>
 
