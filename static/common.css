@@ -235,9 +235,9 @@ a:active {
 
 .social-sym {
     color: #ddd;
-    font-size: 22px;
-    padding: 8px;
-    margin: 0px 2px;
+    font-size: 25px;
+    padding: 0px;
+    margin: 15px 6px;
 }
 
 .social-sym:hover {
