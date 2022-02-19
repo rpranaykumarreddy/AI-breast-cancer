@@ -852,6 +852,17 @@ select {
     font-size: 16px;
 }
 
+.table_div {
+    border-radius: 10px;
+    background-color: #444;
+    display: block;
+    width: 70vw;
+    height: 70vh;
+    margin: 30px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
 .cht-div {
     display: flex;
     flex-direction: column;
@@ -1868,8 +1879,8 @@ select {
 
 .comp .card {
     background-color: #444;
-    width: 350px;
-    height: 200px;
+    width: 43vmin;
+    height: 24vmin;
     margin: 15px 25px;
     border-radius: 10px;
     display: flex;
@@ -2086,8 +2097,8 @@ select {
 
 .lead .port .img-dig {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 18vmin;
+    height: 18vmin;
     margin: 5px;
 }
 
@@ -2106,8 +2117,8 @@ select {
     top: 0%;
     left: 50%;
     transform: translate(-50%, -2.5px);
-    width: 150px;
-    height: 150px;
+    width: 18vmin;
+    height: 18vmin;
     border-radius: 50%;
     background: linear-gradient(0deg, #349cfd, #fd1a55);
 }
@@ -2119,18 +2130,19 @@ select {
     top: 0%;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: 145px;
-    height: 145px;
+    width: 17.5vmin;
+    height: 17.5vmin;
     border-radius: 50%;
 }
 
 .lead .port img {
-    width: 145px;
-    height: 145px;
+    width: 17.5vmin;
+    height: 17.5vmin;
 }
 
 .lead .text {
-    max-height: 200px;
+    height: fit-content;
+    max-height: 24.5vmin;
     z-index: 6;
     bottom: 0%;
     left: 50%;
