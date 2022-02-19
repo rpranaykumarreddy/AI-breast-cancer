@@ -2557,3 +2557,55 @@ select {
         left: 50%;
     }
 }
+
+#warn1 div,
+#warn2 div {
+    width: 100%;
+    height: 100%;
+}
+
+#warn1 img,
+#warn2 img {
+    border: #f33170 5px solid;
+    background-color: #f33170;
+    border-radius: 10%;
+    max-width: 600px;
+    max-height: 600px;
+    width: 80vmin;
+    height: 80vmin;
+}
+
+#warn1 {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 200000;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+#warn2 {
+    background-color: rgba(0, 0, 0, 1);
+    width: 100%;
+    height: 100%;
+    z-index: 200100;
+    display: none;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+@media only screen and (max-width: 1024px) {
+    #warn2 {
+        display: block;
+    }
+    #warn1 {
+        display: none;
+    }
+}
