@@ -27,8 +27,7 @@ def stats(request):
     X_tranSet = stdScl.fit_transform(X_tranSet)
     X_testSet = stdScl.transform(X_testSet)
 
-
-    #Fitting the Logistic Regression Algorithm to the Training Set
+#Fitting the Logistic Regression Algorithm to the Training Set
     modelLoader = LogisticRegression(random_state = 0)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
@@ -36,7 +35,9 @@ def stats(request):
     a1= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
     s1= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p1=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    g1= ((a1+s1+p1)/3)
+    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
+    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
+    g1= ((precision*recall)/(precision+recall))*2*100
 
     #Fitting K-NN Algorithm
     modelLoader = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
@@ -46,7 +47,9 @@ def stats(request):
     a2= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
     s2= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p2=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    g2= ((a2+s2+p2)/3)
+    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
+    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
+    g2= ((precision*recall)/(precision+recall))*2*100
     
     #Fitting SVM
     modelLoader = SVC(kernel = 'linear', random_state = 0)
@@ -56,7 +59,9 @@ def stats(request):
     a3= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
     s3= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p3=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    g3= ((a3+s3+p3)/3)
+    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
+    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
+    g3= ((precision*recall)/(precision+recall))*2*100
 
     #Fitting K-SVM
     modelLoader = SVC(kernel = 'rbf', random_state = 0)
@@ -66,7 +71,9 @@ def stats(request):
     a4= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
     s4= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p4=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    g4= ((a4+s4+p4)/3)
+    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
+    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
+    g4= ((precision*recall)/(precision+recall))*2*100
 
     #Fitting Naive_Bayes
     modelLoader = GaussianNB()
@@ -76,7 +83,9 @@ def stats(request):
     a5= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
     s5= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p5=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    g5= ((a5+s5+p5)/3)
+    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
+    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
+    g5= ((precision*recall)/(precision+recall))*2*100
 
     #Fitting Decision Tree Algorithm
     modelLoader = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
@@ -86,7 +95,9 @@ def stats(request):
     a6= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
     s6= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p6=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    g6= ((a6+s6+p6)/3)
+    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
+    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
+    g6= ((precision*recall)/(precision+recall))*2*100
 
     #Fitting Random Forest Classification Algorithm
     modelLoader = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
@@ -96,7 +107,9 @@ def stats(request):
     a7= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
     s7= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p7=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    g7= ((a7+s7+p7)/3)
+    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
+    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
+    g7= (((precision*recall)/(precision+recall))*2)*100
     
 
     return render(request, 'stats.html',{'title':'Model Evalution','acti':'nav-acti','a1':a1,'s1':s1,'p1':p1,'g1':g1,
