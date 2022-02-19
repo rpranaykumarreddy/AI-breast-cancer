@@ -17,35 +17,33 @@
 <body>
     <div id="pop-but-opn">
     
-        <div class="pop-main">
-            <div class="pop-content">
-                Technologies
+                <div class="pop-main">
+                    <div class="pop-content">
+                        <div class="flex-row">
+                            <div class="inline">
+                                <h1 class="tecenter cblue tebold">TEAM</h1>
+                                <div class="h-lin"></div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="content-det">
+                        <a class="undil pop-padding" href="https://www.kaggle.com/">Koggle</a>
+                        <br>
+                        <br>
+                        <a class="undil pop-padding" href="https://archive.ics.uci.edu/ml/index.php">UCI Repository</a>
+                        <br>
+                    </div>
+                </div>
+        
+                <div class="pop-btn-close">
+                    <button onclick="noneFunction()" class="pop-close">
+                    Close
+                    </button>
+        
+                </div>
+        
             </div>
-    
-            <div class="content-det">
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-                <h3 class="pop-padding">varun reddy </h3>
-    
-    
-            </div>
-        </div>
-    
         <div class="pop-btn-close">
             <button onclick="noneFunction()" class="pop-close">
             Close
@@ -64,19 +62,19 @@
           <div class="left">
               <div class="disp-lap-nav">
                   <div class="flex-row width-fit">
-                      <div onmouseover="noneall_nav()" onclick="window.location.assign('{% url 'home' %}')" class="nav-item {% if request.get_full_path == "/" %} {{acti}} {% endif %}  curpoi">
+                      <div onclick="window.location.assign('{% url 'home' %}')" class="nav-item {% if request.get_full_path == "/" %} {{acti}} {% endif %}  curpoi">
                           <div class="flex-row">
                               <p class="">Home</p>
                           </div>
                       </div>
-                      <div onmouseover="noneall_nav()" onclick="window.location.assign('{% url 'predict' %}')" class="nav-item {% if request.get_full_path == "/predict" %} {{acti}} {% endif %} curpoi">
-                          <div class="flex-row">
-                              <p class="">Try to Predict</p>
-                          </div>
-                      </div>
-                      <div onmouseover="noneall_nav()" onclick="window.location.assign('{% url 'stats' %}')" class="nav-item {% if request.get_full_path == "/stats" %} {{acti}} {% endif %} curpoi">
+                      <div  onclick="window.location.assign('{% url 'stats' %}')" class="nav-item {% if request.get_full_path == "/stats" %} {{acti}} {% endif %} curpoi">
                           <div class="flex-row">
                               <p class="">Model Evaluation</p>
+                          </div>
+                      </div>
+                      <div onclick="window.location.assign('{% url 'predict' %}')" class="nav-item {% if request.get_full_path == "/predict" %} {{acti}} {% endif %} curpoi">
+                          <div class="flex-row">
+                              <p class="">Try to Predict</p>
                           </div>
                       </div>
                   </div>
@@ -105,7 +103,7 @@
   </div>
 
 
-  <div class="body-div" onmouseover="noneall_nav()">
+  <div class="body-div">
 
 
   {% block content %} {% endblock %}
