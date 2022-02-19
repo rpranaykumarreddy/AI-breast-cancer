@@ -56,7 +56,7 @@
           <div class="left">
               <div class="disp-lap-nav">
                   <div class="flex-row width-fit">
-                      <div onclick="window.location.assign('{% url 'home' %}')" class="nav-item {% if request.get_full_path == "/" %} {{acti}} {% endif %}  curpoi">
+                      <div id="home-na-dis" onclick="window.location.assign('{% url 'home' %}')" class="nav-item {% if request.get_full_path == "/" %} {{acti}} {% endif %}  curpoi">
                           <div class="flex-row">
                               <p class="">Home</p>
                           </div>

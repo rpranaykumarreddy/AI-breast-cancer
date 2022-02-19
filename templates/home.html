@@ -133,17 +133,17 @@
         data.addColumn('boolean', 'Worst');
 
         data.addRows([
-        ['Radius', true, true, true, {style: 'font-style:bold; font-size:1em;'}],
-        ['Texture', true, true, true, {style: 'font-style:bold; font-size:1em;'}],
-        ['Perimeter', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
-        ['Area', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
-        ['Smoothness', true, true, true, {style: 'font-style:bold; font-size:1em;'}],
-        ['Compactness', true, false, true, {style: 'font-style:bold; font-size:1em;'}],
-        ['concavity', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
-        ['concave Points', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
-        ['Symmetry', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
-        ['Fractal Dimension', false, false, false, {style: 'font-style:bold; font-size:1em;'}],
-        ]);
+        ['Radius', true, true, true],
+        ['Texture', true, true, true],
+        ['Perimeter', false, false, false],
+        ['Area', false, false, false],
+        ['Smoothness', true, true, true],
+        ['Compactness', true, false, true],
+        ['concavity', false, false, false],
+        ['concave Points', false, false, false],
+        ['Symmetry', false, false, false],
+        ['Fractal Dimension', false, false, false],
+    ]);
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
 
