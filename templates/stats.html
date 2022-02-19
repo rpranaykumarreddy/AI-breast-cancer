@@ -19,7 +19,7 @@
     function drawVisualization() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
-            ['Model', 'Accuracy', 'Sensitivity', 'Specificity', 'Average'],
+            ['Model', 'Accuracy', 'Sensitivity', 'Specificity', 'F1-score'],
             ['Logistic Regression', {{a1}}, {{s1}}, {{p1}}, {{g1}}],
             ['K-NN', {{a2}}, {{s2}}, {{p2}}, {{g2}}],
             ['SVM', {{a3}}, {{s3}}, {{p3}}, {{g3}}],
@@ -45,7 +45,7 @@
             vAxis: {
                 title: 'percentage',
                 titleTextStyle: {
-                    color: '#f33170',
+                    color: '#23d8f7',
                     fontSize: '20',
                     bold: true,
                 },
@@ -59,7 +59,7 @@
             hAxis: {
                 title: 'Model',
                 titleTextStyle: {
-                    color: '#f33170',
+                    color: '#23d8f7',
                     fontSize: '20',
                     bold: true,
                 },

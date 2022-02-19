@@ -1,11 +1,9 @@
-
-{%extends 'base.html'%} {%block content%}
-{% if value %}
+ {%extends 'base.html'%} {%block content%} {% if value %}
 
 
 <div class="predict-final">
     <div class="predict-main">
-        <b class="cwhite1"><span class="cpink">Varun reddy bokka,</span> We predict your diagonised with <span class="cblue">{{value}} Cancer</span>.</b>
+        <b class="cwhite1">We predict your diagonised with <span class="cblue">{{value}} Cancer</span>.</b>
     </div>
 
     <div class="predict-you">
@@ -22,112 +20,115 @@
 {% else %}
 <div class="form-body">
     <div class="for-cen">
-      <form class="" method="POST" action="predict">
-        {% csrf_token %}
-  
-          <div class="namedata">
-              <div class="ndata">
-                  <label for="name">Name</label>
-                  <input type="text" placeholder='enter your name'  required>
-              </div>
-              <div class="contan">
-                  <p class="rad-lab">Do you have data</p>
-                  <label for="dot1" class="form-cont">Yes
+        <form class="" method="POST" action="predict">
+            {% csrf_token %}
+
+            <div class="namedata">
+                <div class="ndata">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder='enter your name'>
+                </div>
+                <div class="contan">
+                    <p class="rad-lab">Do you have data</p>
+                    <label for="dot1" class="form-cont">Yes
                   <input type="radio" checked="checked"  id="dot1" checked name="dots" value="0" onchange="n()">
                   <span class="checkmark pad-sid"></span>
                   </label>
-                  <label for="dot2" class="form-cont">No
+                    <label for="dot2" class="form-cont">No
              <input type="radio"id="dot2" name="dots" value="1" onchange="n()">
              <span class="checkmark"></span>
          </label>
-              </div>
-          </div>
-          <div class="namedata">
-            <div class="opt disnon ndata">
-              <label for="e">Select a Sample</label>
-              <select id="e" onchange="f()">
-                <option value="0">choose any</option>
-                <option value="1">Sample 1</option>
-                <option value="2">Sample 2</option>
-                <option value="3">Sample 3</option>
-              </select>
+                </div>
             </div>
-          </div>
-          <div class="fcontan">
-              <div class="fcontan1">
-                  <div class="form-cott">
-                      <label for="mradius">Mean Radius</label>
-                      <input type="number" step=".00001" name="mradius" id="mradius"  class="allvalue" placeholder='enter your name'  required />
-                  </div>
-                  <br><br>
-                  <div class="form-cott">
-                      <label for="mtexture">Mean Texture</label>
-                      <input type="number" step=".00001" name="mtexture" id="mtexture" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-                  <br><br>
-                  <div class="form-cott">
-                      <label for="msmoothness">Mean Smoothness</label>
-                      <input type="number" step=".00001" name="msmoothness" id="msmoothness"  class="allvalue" placeholder='enter your name'  required />
-                  </div>
-                  <br><br>
-                  <div class="form-cott">
-                      <label for="mcompactness">Mean Compactness</label>
-                      <input type="number" step=".00001" name="mcompactness" id="mcompactness" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-  
-              </div>
-              <div class="fcontan2">
-                  <div class="form-cott">
-                      <label for="seradius">Radius Standard Error</label>
-                      <input type="number" step=".00001"  name="seradius" id="seradius" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-                  <br><br>
-                  <div class="form-cott">
-                      <label for="setexture">Texture Standard Error</label>
-                      <input type="number" step=".00001" name="setexture" id="setexture" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-                  <br><br>
-                  <div class="form-cott">
-                      <label for="sesmoothness">Smoothness Standard Error</label>
-                      <input type="number" step=".00001" name="sesmoothness" id="sesmoothness" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-                  <br><br>
-                  <div class="form-cott">
-                      <label for="secompactness">Compactness Standard Error</label>
-                      <input type="number" step=".00001" name="secompactness" id="secompactness" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-              </div>
-              <div class="fcontan2">
-                  <div class="form-cott">
-                      <label for="wradius">Worst Radius</label>
-                      <input type="number" step=".00001"  name="wradius" id="wradius" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-                  <br><br>
-                  <div class="form-cott">
-                      <label for="texture">Worst Texture</label>
-                      <input type="number" step=".00001" name="wtexture" id="wtexture" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-                  <br><br>
-                  <div class="form-cott">
-                      <label for="wsmoothness">Worst Smoothness</label>
-                      <input type="number" step=".00001" name="wsmoothness" id="wsmoothness" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-                  <br><br>
-                  <div class="form-cott">
-                      <label for="wcompactness">Worst Compactness</label>
-                      <input type="number" step=".00001" name="wcompactness" id="wcompactness" class="allvalue" placeholder='enter your name'  required />
-                  </div>
-              </div>
-  
-          </div>
-          <div class="btn">
-              <button type="submit" class="btn-lg btn-block btn btn-danger mb-5">
+            <div class="namedata">
+                <div class="opt disnon ndata">
+                    <label for="e">Select a Sample</label>
+                    <select id="e" onchange="f()">
+                <option value="0">choose any</option>
+                <option value="1">Benign Sample - 1</option>
+                <option value="2">Benign Sample - 2</option>
+                <option value="3">Benign Sample - 3</option>
+                <option value="4">Malignant Sample - 1</option>
+                <option value="5">Malignant Sample - 2</option>
+                <option value="6">Malignant Sample - 3</option>
+              </select>
+                </div>
+            </div>
+            <div class="fcontan">
+                <div class="fcontan1">
+                    <div class="form-cott">
+                        <label for="mradius">Mean Radius</label>
+                        <input type="number" step="0.000001" name="mradius" id="mradius" class="allvalue" placeholder='enter mean radius' required />
+                    </div>
+                    <br><br>
+                    <div class="form-cott">
+                        <label for="mtexture">Mean Texture</label>
+                        <input type="number" step="0.000001" name="mtexture" id="mtexture" class="allvalue" placeholder='enter mean texture' required />
+                    </div>
+                    <br><br>
+                    <div class="form-cott">
+                        <label for="msmoothness">Mean Smoothness</label>
+                        <input type="number" step="0.000001" name="msmoothness" id="msmoothness" class="allvalue" placeholder='enter mean smoothness' required />
+                    </div>
+                    <br><br>
+                    <div class="form-cott">
+                        <label for="mcompactness">Mean Compactness</label>
+                        <input type="number" step="0.000001" name="mcompactness" id="mcompactness" class="allvalue" placeholder='enter mean compactness' required />
+                    </div>
+
+                </div>
+                <div class="fcontan2">
+                    <div class="form-cott">
+                        <label for="seradius">Radius Standard Error</label>
+                        <input type="number" step="0.000001" name="seradius" id="seradius" class="allvalue" placeholder='enter radius standard error' required />
+                    </div>
+                    <br><br>
+                    <div class="form-cott">
+                        <label for="setexture">Texture Standard Error</label>
+                        <input type="number" step="0.000001" name="setexture" id="setexture" class="allvalue" placeholder='enter texture standard error' required />
+                    </div>
+                    <br><br>
+                    <div class="form-cott">
+                        <label for="sesmoothness">Smoothness Standard Error</label>
+                        <input type="number" step="0.000001" name="sesmoothness" id="sesmoothness" class="allvalue" placeholder='enter smoothness standard error' required />
+                    </div>
+                    <br><br>
+                    <div class="form-cott">
+                        <label for="secompactness">Compactness Standard Error</label>
+                        <input type="number" step="0.000001" name="secompactness" id="secompactness" class="allvalue" placeholder='enter compactness standard error' required />
+                    </div>
+                </div>
+                <div class="fcontan2">
+                    <div class="form-cott">
+                        <label for="wradius">Worst Radius</label>
+                        <input type="number" step="0.000001" name="wradius" id="wradius" class="allvalue" placeholder='enter worst radius' required />
+                    </div>
+                    <br><br>
+                    <div class="form-cott">
+                        <label for="texture">Worst Texture</label>
+                        <input type="number" step="0.000001" name="wtexture" id="wtexture" class="allvalue" placeholder='enter worst texture' required />
+                    </div>
+                    <br><br>
+                    <div class="form-cott">
+                        <label for="wsmoothness">Worst Smoothness</label>
+                        <input type="number" step="0.000001" name="wsmoothness" id="wsmoothness" class="allvalue" placeholder='enter worst smoothness' required />
+                    </div>
+                    <br><br>
+                    <div class="form-cott">
+                        <label for="wcompactness">Worst Compactness</label>
+                        <input type="number" step="0.000001" name="wcompactness" id="wcompactness" class="allvalue" placeholder='enter worst compactness' required />
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn">
+                <button type="submit" class="btn-lg btn-block btn btn-danger mb-5">
               Try to Predict
           </button>
-          </div>
-  
-      </form>
-  </div>
+            </div>
+
+        </form>
+    </div>
 </div>
 
 {% endif %}
@@ -138,7 +139,10 @@
         [7.76, 24.54, 0.05263, 0.04362, 0.3857, 1.428, 0.007189, 0.00466, 9.456, 30.37, 0.08996, 0.06444],
         [14.05, 27.15, 0.09929, 0.1126, 0.3645, 1.492, 0.00725, 0.02678, 15.3, 33.17, 0.1241, 0.2264],
         [11.2, 23.37, 0.0745, 0.0356, 0.3141, 3.896, 0.0076, 0.0089, 11.32, 38.3, 0.0927, 0.0549],
-        [15.22, 30.62, 0.1048, 0.2087, 0.2602, 1.205, 0.004625, 0.04844, 17.52, 42.79, 0.1417, 0.7917]
+        [15.22, 30.62, 0.1048, 0.2087, 0.2602, 1.205, 0.004625, 0.04844, 17.52, 42.79, 0.1417, 0.7917],
+        [20.92, 25.09, 0.1099, 0.2236, 0.9622, 1.026, 0.006399, 0.0431, 24.29, 29.41, 0.1407, 0.4186],
+        [21.56, 22.39, 0.111, 0.1159, 1.176, 1.256, 0.0103, 0.02891, 25.45, 26.4, 0.141, 0.2113]
+
     ];
 
 
@@ -165,4 +169,4 @@
     }
 </script>
 
-  {%endblock%}
+{%endblock%}
