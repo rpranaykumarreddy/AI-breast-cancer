@@ -237,7 +237,6 @@ a:active {
     color: #ddd;
     font-size: 25px;
     padding: 0px;
-    margin: 15px 6px;
 }
 
 .social-sym:hover {
@@ -1297,6 +1296,10 @@ select {
     animation-iteration-count: infinite;
 }
 
+.man-slid .text1 h3 {
+    font-size: 2vmin;
+}
+
 .man-slid .text2 {
     z-index: 500;
     font-size: 3.4vmin;
@@ -1951,11 +1954,11 @@ select {
     bottom: 0px;
     left: 0px;
     color: #ddd;
+    margin: 10px 5px 30px 5px;
 }
 
 .team-social a {
-    margin-top: 8px;
-    margin-bottom: 0px;
+    margin: 8px 18px 8px 0px;
 }
 
 .team-social a:hover {
