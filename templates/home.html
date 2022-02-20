@@ -47,6 +47,7 @@
     <div class="logo var"><img src="{% static 'logo.png'%}"></div>
     <div class="flex-row var text1 cwhite1 tecenter">
         <h1>Detection of Breast Cancer</h1>
+        <h3>FFE Batch-2 Team-12</h3>
     </div>
     <div class="flex-row var text2 cwhite1 tecenter">
         <h1>Problem Statement</h1>
@@ -69,7 +70,7 @@
                 <p class="h6 white1">Our Notion</p>
             </div>
             <div class="paddiv2vw" style="padding-top: 0px; font-size: 15px; font-weight: bold;">
-                <p>The cancer is basically determined by two values Malignant and Benign.
+                <p>Breast cancer is basically is of two types Malignant and Benign.
                     Malignant is the variant where cancer spreads throughout whereas Benign is the one which doesn't spread. 
                     Actually they doesn't have any intermediate values so we used classification to get the end product. </p> <br>
                     <div style="padding-left: 25px;">
@@ -88,8 +89,7 @@
             </div>
             <div class="paddiv2vw" style="padding-top: 0px; font-size: 15px; font-weight: bold;">
                 <p>We have taken up the dataset from UCI which  contains the data of the 10 categories and upto 30 inputs which are used to predict the type of cancer. 
-                    We have gone to talk with Medical graduate about the efficient way of taking up the 30 inputs which might be little heavy of the user so finally we got suggestion of just by taking some efficient values and giving the most accurate prediction.</p>
-
+                We have gone to talk with Medical graduate about the efficient way of taking up the 30 inputs which might be little heavy of the user so finally we got suggestion of just by taking some efficient values and giving the most accurate prediction.</p>
             </div>
         </div>
     </div>
@@ -98,15 +98,14 @@
     <div>
         <div class="flex-col">
             <div class="inline">
-                <h1 class="tecenter cwhite1">DATASET</h1>
+                <h1 class="tecenter cwhite1">DATASET ANALYSIS</h1>
                 <div class="h-lin"></div>
             </div>
             <br>
             <div class="team-social">
-                <div class="flex-row "><br><br>
-                    <a style="margin: 15px 6px;" href="https://www.kaggle.com/uciml/breast-cancer-wisconsin-data" target="_blank" title="UCI dataset:Kaggle"><span class="social-sym hwhite"><i class="fa-brands fa-kaggle"></i></i></span></a>
-                    <a style="margin: 15px 6px;"  href="https://github.com/rpranaykumarreddy/bc" target="_blank" title="Project code:Github"><span class="social-sym hwhite"><i class="fa-brands fa-github"></i></i></span></a>
-                    <br><br>
+                <div class="flex-row ">
+                    <a href="https://www.kaggle.com/uciml/breast-cancer-wisconsin-data" target="_blank" title="UCI dataset:Kaggle"><span class="social-sym hwhite"><i class="fa-brands fa-kaggle"></i></i></span></a>
+                    <a href="https://github.com/rpranaykumarreddy/bc" target="_blank" title="Project code:Github"><span class="social-sym hwhite"><i class="fa-brands fa-github"></i></i></span></a>
                 </div>
             </div>
             
@@ -320,7 +319,7 @@
         <div class="sub-le">
             <div class="port">
                 <div class="img-dig">
-                    <div class="img"><img src="{% static 'interface.jpg'%}" alt=""></div>
+                    <div class="img"><img src="{% static ''%}" alt=""></div>
                     <div class="bg-img"></div>
                 </div>
                 <div class="text white1 tecenter flex-col">
@@ -502,8 +501,7 @@
             <div class="foot-left">
                 <div>
                     <h1 class="thank">CONCLUSION</h1>
-                    <h2 class="tecenter">Alone we can do so little<br> Together we can do so much.
-                    </h2>
+                    <h2 class="tecenter">We see this project as a small step to help cancer patients<br> It also gave us an experience in numerous fields.</h2>
                 </div>
             </div>
             <div class="foot-right">
@@ -536,7 +534,7 @@
                 <h2 class="tecenter">
                     <a class="undli" href="">FFE</a>,
                     <a class="undli" href="">Skill Build</a>,
-                    <a class="undli" href="">IBM</a>, Haribhopala Krishnan <br> some inspirations led us to this project.
+                    <a class="undli" href="">IBM</a>, Haribhopala Krishnan <br> some inspirations led us to this interface.
                 </h2>
             </div>
         </div>
@@ -552,10 +550,8 @@
 </div>
 <div id="warn2">
     <a href="">
-        <div class="flex-row"  onclick="window.location.assign('{% url 'predict' %}')">
-           
-            <img src="{% static '2.jpg'%}">
-          
+        <div class="flex-row">
+            <img src="{% static '2.jpg'%}">  
         </div>
     </a>
 </div>
@@ -564,6 +560,17 @@
     setTimeout(function() {
         document.getElementById('warn1').style.display = 'none'
     }, 5 * 1000);
+    
+    window.addEventListener('resize', warn());
+    warn();
+
+    function warn() {
+        if (window.innerWidth <= 1024) {
+            setTimeout(function() {
+                window.location.href = "https://ffe212.herokuapp.com/predict";
+            }, 3 * 1000);
+        }
+    }
 </script>
 <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-circle-up"></i></button> 
 
