@@ -11,6 +11,7 @@ from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, f1_score
 
 def stats(request):
     print("stats")
@@ -32,84 +33,70 @@ def stats(request):
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a1= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a1= accuracy_score(Y_testSet, Y_pred)*100
     s1= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p1=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
-    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
-    g1= ((precision*recall)/(precision+recall))*2*100
+    g1= f1_score(Y_testSet, Y_pred)*100
 
     #Fitting K-NN Algorithm
     modelLoader = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a2= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a2= accuracy_score(Y_testSet, Y_pred)*100
     s2= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p2=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
-    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
-    g2= ((precision*recall)/(precision+recall))*2*100
+    g2= f1_score(Y_testSet, Y_pred)*100
     
     #Fitting SVM
     modelLoader = SVC(kernel = 'linear', random_state = 0)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a3= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a3= accuracy_score(Y_testSet, Y_pred)*100
     s3= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p3=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
-    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
-    g3= ((precision*recall)/(precision+recall))*2*100
+    g3= f1_score(Y_testSet, Y_pred)*100
 
     #Fitting K-SVM
     modelLoader = SVC(kernel = 'rbf', random_state = 0)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a4= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a4= accuracy_score(Y_testSet, Y_pred)*100
     s4= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p4=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
-    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
-    g4= ((precision*recall)/(precision+recall))*2*100
+    g4= f1_score(Y_testSet, Y_pred)*100
 
     #Fitting Naive_Bayes
     modelLoader = GaussianNB()
     modelLoader.fit(X_tranSet, Y_tranSet)   
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a5= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a5= accuracy_score(Y_testSet, Y_pred)*100
     s5= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p5=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
-    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
-    g5= ((precision*recall)/(precision+recall))*2*100
+    g5= f1_score(Y_testSet, Y_pred)*100
 
     #Fitting Decision Tree Algorithm
     modelLoader = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a6= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a6= accuracy_score(Y_testSet, Y_pred)*100
     s6= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p6=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
-    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
-    g6= ((precision*recall)/(precision+recall))*2*100
+    g6= f1_score(Y_testSet, Y_pred)*100
 
     #Fitting Random Forest Classification Algorithm
     modelLoader = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a7= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a7= accuracy_score(Y_testSet, Y_pred)*100
     s7= (((confMatx [1, 1]  *100 )/ (confMatx [1, 1] + confMatx [1, 0])))
     p7=(((confMatx [0, 0]  *100 )/ (confMatx [0, 0] + confMatx [0, 1])))
-    recall=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [1, 0])))
-    precision=((confMatx [1, 1])/((confMatx [1, 1])+(confMatx [0,1])))
-    g7= (((precision*recall)/(precision+recall))*2)*100
+    g7= f1_score(Y_testSet, Y_pred)*100
     
 
     return render(request, 'stats.html',{'title':'Model Evalution','acti':'nav-acti','a1':a1,'s1':s1,'p1':p1,'g1':g1,
@@ -137,49 +124,49 @@ def predict(request):
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a1= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a1= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting K-NN Algorithm
     modelLoader = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a2= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a2= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting SVM
     modelLoader = SVC(kernel = 'linear', random_state = 0)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a3= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a3= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting K-SVM
     modelLoader = SVC(kernel = 'rbf', random_state = 0)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a4= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a4= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting Naive_Bayes
     modelLoader = GaussianNB()
     modelLoader.fit(X_tranSet, Y_tranSet)   
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a5= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a5= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting Decision Tree Algorithm
     modelLoader = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a6= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a6= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting Random Forest Classification Algorithm
     modelLoader = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
     modelLoader.fit(X_tranSet, Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
-    a7= (((confMatx [0, 0] + confMatx [1, 1]) *100 )/ (confMatx [0, 0] + confMatx [1, 1] + confMatx [0, 1] + confMatx [1, 0]))
+    a7= accuracy_score(Y_testSet, Y_pred)*100
     
     max_ac = max(a1,a2,a3,a4,a5,a6,a7)
     print (max_ac)
