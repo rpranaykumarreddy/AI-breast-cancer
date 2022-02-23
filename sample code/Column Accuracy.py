@@ -9,6 +9,7 @@ Created on Fri Feb  4 15:42:28 2022
 #Classification of cancer dignosis
 #importing the libraries
 import pandas as pd
+import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
@@ -84,31 +85,31 @@ X_sS10 = stdScl.transform(X_sS10)
  
 def per(XT,XS,modName):
   modelLoader = LogisticRegression(random_state = 0)
-  modelLoader.fit(XT, Y_tranSet)
+  modelLoader.fit(np.nan_to_num(XT), Y_tranSet)
   Y_pred = modelLoader.predict(XS)
   ap1= accuracy_score(Y_testSet, Y_pred)*100
   modelLoader = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
-  modelLoader.fit(XT, Y_tranSet)
+  modelLoader.fit(np.nan_to_num(XT), Y_tranSet)
   Y_pred = modelLoader.predict(XS)
   ap2= accuracy_score(Y_testSet, Y_pred)*100
   modelLoader = SVC(kernel = 'linear', random_state = 0)
-  modelLoader.fit(XT, Y_tranSet)
+  modelLoader.fit(np.nan_to_num(XT), Y_tranSet)
   Y_pred = modelLoader.predict(XS)
   ap3= accuracy_score(Y_testSet, Y_pred)*100
   modelLoader = SVC(kernel = 'rbf', random_state = 0)
-  modelLoader.fit(XT, Y_tranSet)
+  modelLoader.fit(np.nan_to_num(XT), Y_tranSet)
   Y_pred = modelLoader.predict(XS)
   ap4= accuracy_score(Y_testSet, Y_pred)*100
   modelLoader = GaussianNB()
-  modelLoader.fit(XT, Y_tranSet)
+  modelLoader.fit(np.nan_to_num(XT), Y_tranSet)
   Y_pred = modelLoader.predict(XS)
   ap5= accuracy_score(Y_testSet, Y_pred)*100
   modelLoader = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
-  modelLoader.fit(XT, Y_tranSet)
+  modelLoader.fit(np.nan_to_num(XT), Y_tranSet)
   Y_pred = modelLoader.predict(XS)
   ap6= accuracy_score(Y_testSet, Y_pred)*100
   modelLoader = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
-  modelLoader.fit(XT, Y_tranSet)
+  modelLoader.fit(np.nan_to_num(XT), Y_tranSet)
   Y_pred = modelLoader.predict(XS)
   ap7= accuracy_score(Y_testSet, Y_pred)*100
   print("\n" + modName + "--> Max Accuracy : {}".format(max(ap1,ap2,ap3,ap4,ap5,ap6,ap7)))
