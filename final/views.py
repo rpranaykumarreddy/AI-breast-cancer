@@ -28,9 +28,9 @@ def stats(request):
     X_tranSet = stdScl.fit_transform(X_tranSet)
     X_testSet = stdScl.transform(X_testSet)
 
-#Fitting the Logistic Regression Algorithm to the Training Set
+    #Fitting the Logistic Regression Algorithm to the Training Set
     modelLoader = LogisticRegression(random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a1= accuracy_score(Y_testSet, Y_pred)*100
@@ -40,7 +40,7 @@ def stats(request):
 
     #Fitting K-NN Algorithm
     modelLoader = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a2= accuracy_score(Y_testSet, Y_pred)*100
@@ -50,7 +50,7 @@ def stats(request):
     
     #Fitting SVM
     modelLoader = SVC(kernel = 'linear', random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a3= accuracy_score(Y_testSet, Y_pred)*100
@@ -60,7 +60,7 @@ def stats(request):
 
     #Fitting K-SVM
     modelLoader = SVC(kernel = 'rbf', random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a4= accuracy_score(Y_testSet, Y_pred)*100
@@ -70,7 +70,7 @@ def stats(request):
 
     #Fitting Naive_Bayes
     modelLoader = GaussianNB()
-    modelLoader.fit(X_tranSet, Y_tranSet)   
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)   
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a5= accuracy_score(Y_testSet, Y_pred)*100
@@ -80,7 +80,7 @@ def stats(request):
 
     #Fitting Decision Tree Algorithm
     modelLoader = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a6= accuracy_score(Y_testSet, Y_pred)*100
@@ -90,7 +90,7 @@ def stats(request):
 
     #Fitting Random Forest Classification Algorithm
     modelLoader = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a7= accuracy_score(Y_testSet, Y_pred)*100
@@ -121,49 +121,49 @@ def predict(request):
     X_testSet = stdScl.transform(X_testSet)
 
     modelLoader = LogisticRegression(random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a1= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting K-NN Algorithm
     modelLoader = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a2= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting SVM
     modelLoader = SVC(kernel = 'linear', random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a3= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting K-SVM
     modelLoader = SVC(kernel = 'rbf', random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a4= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting Naive_Bayes
     modelLoader = GaussianNB()
-    modelLoader.fit(X_tranSet, Y_tranSet)   
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)   
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a5= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting Decision Tree Algorithm
     modelLoader = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a6= accuracy_score(Y_testSet, Y_pred)*100
     
     #Fitting Random Forest Classification Algorithm
     modelLoader = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
-    modelLoader.fit(X_tranSet, Y_tranSet)
+    modelLoader.fit(np.nan_to_num(X_tranSet), Y_tranSet)
     Y_pred = modelLoader.predict(X_testSet)
     confMatx = confusion_matrix(Y_testSet, Y_pred)
     a7= accuracy_score(Y_testSet, Y_pred)*100
