@@ -539,6 +539,15 @@ main {
     background-color: #2196F3;
 }
 
+footer {
+    width: 100%;
+}
+
+footer div {
+    height: 10vh;
+    width: 100%;
+}
+
 
 /*footer*/
 
@@ -548,7 +557,7 @@ main {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 }
 
 .foot-img .bg {
@@ -641,7 +650,7 @@ main {
     flex-grow: 0;
     color: #f33170;
     width: 100vw;
-    min-height: calc(100vh - 65px);
+    min-height: calc(90vh - 65px);
 }
 
 .for-cen {
@@ -788,6 +797,8 @@ select {
     color: #23d8f7;
     background-color: #313131;
     border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .ndata input[type=text]::placeholder {
@@ -867,7 +878,7 @@ select {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 65px);
+    height: calc(90vh - 65px);
     width: 100vw;
 }
 
@@ -877,7 +888,7 @@ select {
     padding: 0px 0px 35px 0px;
     display: block;
     width: 70vw;
-    height: 70vh;
+    height: 60vh;
     margin: 30px;
     overflow: hidden;
     box-sizing: border-box;
