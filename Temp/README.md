@@ -1,0 +1,4 @@
+- 👋 Hi, We are FFE Batch-2 team-12 
+- 👨🏽‍🤝‍👨🏻👨🏽‍🤝‍👨🏻 @rpranaykumarreddy @varunreddy1024 @nirvanreddy @jayanth9676 @Deepthi2601 @CHOUHAN-MOHIT  @M Pavan Kumar
+- 🌱 visit the website at https://ffe212.herokuapp.com
+- 💞️ We see this project as a small step to help cancer patients. It also gave us an experience in numerous fields.
